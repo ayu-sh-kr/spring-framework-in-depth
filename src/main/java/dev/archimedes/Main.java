@@ -8,7 +8,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+
 public class Main {
+
     public static void main(String[] args) throws Exception{
 
         ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
@@ -16,6 +18,8 @@ public class Main {
 
         BeanFactory factory  = new ClassPathXmlApplicationContext("bean-factory.xml");
         Student student = (Student) factory.getBean("student");
+        Student aastha = context.getBean(Student.class);
+        System.out.println(aastha);
         System.out.println(student);
         for (int i = 0; i < 5; i++){
             outputService.generateOutput();
