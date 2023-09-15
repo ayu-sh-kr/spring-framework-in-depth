@@ -1,5 +1,6 @@
 package dev.archimedes.config;
 
+import dev.archimedes.Entity.Student;
 import dev.archimedes.services.GreetingService;
 import dev.archimedes.services.OutputService;
 import dev.archimedes.services.TimeService;
@@ -51,4 +52,8 @@ public class ApplicationConfig {
         return new OutputService(greetingService, timeService);
     }
 
+    @Bean
+    public Student student(){
+        return new Student("Aastha", 21);
+    }
 }
