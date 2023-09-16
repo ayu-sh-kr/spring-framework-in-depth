@@ -12,4 +12,5 @@
           init-method="initializeBean" destroy-method="destroyBean">
         <property name="name" value="geek"></property>
     </bean>
+
 </beans>
