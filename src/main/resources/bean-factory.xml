@@ -7,4 +7,9 @@
         <constructor-arg name="name" value="Ayush"></constructor-arg>
         <constructor-arg name="age" value="23"></constructor-arg>
     </bean>
+
+    <bean id="welcomeBean" class="dev.archimedes.bean.WelcomeBean"
+          init-method="initializeBean" destroy-method="destroyBean">
+        <property name="name" value="geek"></property>
+    </bean>
 </beans>
