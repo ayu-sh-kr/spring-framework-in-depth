@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+                https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="tyre1Bean" class="dev.archimedes.dependecy.Tyres">
+        <property name="name" value="MRF">
+        </property>
+
+        <property name="place" value="India">
+        </property>
+
+        <property name="message" value="Make in India">
+        </property>
+
+    </bean>
+
+    <bean id="ToyotaBean" class="dev.archimedes.dependecy.ToyataEngine"
+    init-method="initialization" destroy-method="destroyed">
+        <property name="company" value="Toyota">
+        </property>
+
+        <property name="cost" value="300000.00">
+        </property>
+
+    </bean>
+
+    <bean id="tyre2Bean" class="dev.archimedes.dependecy.Tyres">
+        <property name="name" value="TVS">
+        </property>
+
+        <property name="place" value="India">
+        </property>
+
+        <property name="message" value="Make in India">
+        </property>
+
+    </bean>
+
+    <bean id="InjectedWithSetter" class="dev.archimedes.dependecy.Vehicle">
+        <property name="engine" ref="ToyotaBean">
+        </property>
+
+        <property name="tyre" ref="tyre1Bean">
+        </property>
+
+    </bean>
+    <bean id="InjectedWithConstructor" class="dev.archimedes.dependecy.Vehicle">
+        <constructor-arg name="engine" ref="ToyotaBean">
+        </constructor-arg>
+        <constructor-arg name="tyre" ref="tyre2Bean">
+        </constructor-arg>
+    </bean>
+</beans>
