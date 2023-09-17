@@ -41,8 +41,8 @@ public class Vehicle {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("dependency-bean.xml");
 
-        Vehicle vehicle1 = (Vehicle) context.getBean("InjectedWithSetter");
-        Vehicle vehicle2 = (Vehicle) context.getBean("InjectedWithConstructor");
+        Vehicle vehicle1 = (Vehicle) context.getBean("injectedWithSetter");
+        Vehicle vehicle2 = (Vehicle) context.getBean("injectedWithConstructor");
 
         System.out.println(vehicle1);
         System.out.println(vehicle2);

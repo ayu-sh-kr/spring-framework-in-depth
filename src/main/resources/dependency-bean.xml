@@ -17,8 +17,8 @@
 
     </bean>
 
-    <bean id="ToyotaBean" class="dev.archimedes.dependecy.ToyataEngine"
-    init-method="initialization" destroy-method="destroyed">
+    <bean id="toyotaBean" class="dev.archimedes.dependecy.ToyataEngine"
+          init-method="initialization" destroy-method="destroyed">
         <property name="company" value="Toyota">
         </property>
 
@@ -39,18 +39,33 @@
 
     </bean>
 
-    <bean id="InjectedWithSetter" class="dev.archimedes.dependecy.Vehicle">
-        <property name="engine" ref="ToyotaBean">
+    <bean id="injectedWithSetter" class="dev.archimedes.dependecy.Vehicle">
+        <property name="engine" ref="toyotaBean">
         </property>
 
         <property name="tyre" ref="tyre1Bean">
         </property>
 
     </bean>
-    <bean id="InjectedWithConstructor" class="dev.archimedes.dependecy.Vehicle">
-        <constructor-arg name="engine" ref="ToyotaBean">
+    <bean id="injectedWithConstructor" class="dev.archimedes.dependecy.Vehicle">
+        <constructor-arg name="engine" ref="toyotaBean">
         </constructor-arg>
         <constructor-arg name="tyre" ref="tyre2Bean">
         </constructor-arg>
+    </bean>
+
+    <bean id="info" class="dev.archimedes.bean.Details">
+        <property name="name" value="Lakshmi"></property>
+        <property name="msg" value="Welcome to Geeks"></property>
+        <property name="frameworks">
+            <map>
+                <entry key="Struts" value="Struts is an open source framework used to
+                develop Java MVC based web applications."></entry>
+                <entry key="Spring" value="Spring is an application framework used to develop Java Enterprise applications
+                           and designed on concept called Dependency injection."></entry>
+                <entry key="Hibernate" value="Hibernate is an object-relational mapping (ORM) framework that works with relational
+                           databases to manage the data."></entry>
+            </map>
+        </property>
     </bean>
 </beans>
